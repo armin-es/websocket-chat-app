@@ -1,3 +1,4 @@
+# WebSocket Chat Application with React, Node.js Server and Socket.io
 ## Description
 
 This is a chat application using React on the client side, and Node.js on the server side. The web app and the server communicate with WebSocket API using Socket.io library.
@@ -13,10 +14,9 @@ The web application has the following features:
 
 Although the focus of this project has been on developing the front-end, the server has the capability of acting as a WebSocket powered API with an in-memory persistence, which is reset after a server restart. The server comes with a prepopulated chat data. In this context, the server is able to:
 
-1. Persist user messages
-2. Persist messages to a channel
-3. Return a list of all channels
-4. Return chat history for any specific channel
+1. Persist messages to a channel
+2. Return a list of all channels
+3. Return chat history for any specific channel
 
 ## How to run the project
 

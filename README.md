@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+## Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a chat application using React on the client side, and Node.js on the server side. The web app and the server communicate with WebSocket API using Socket.io library.
 
-## Available Scripts
+The web application has the following features:
 
-In the project directory, you can run:
+1. Displays a list of all available channels
+2. User can click on a channel to join and view the chat history
+3. User can send messages to the channel
+4. User can edit their previous messages
+5. User can delete their previous messages
+6. User can search in the chat history
 
-### `yarn start`
+Although the focus of this project has been on developing the front-end, the server has the capability of acting as a WebSocket powered API with an in-memory persistence, which is reset after a server restart. The server comes with a prepopulated chat data. In this context, the server is able to:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Persist user messages
+2. Persist messages to a channel
+3. Return a list of all channels
+4. Return chat history for any specific channel
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to run the project
 
-### `yarn test`
+The project is divided into two components:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `client`
+- `server` 
 
-### `yarn build`
+In order to use the application you need to get both components running.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After cloning the application you need to install the npm dependencies for both components by executing `yarn` inside the root of `client` and `server` folders.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Then you can run the client using `yarn start` and then accessing it at `localhost:3000`. You can run the server using `yarn dev` at the root of their folders, which is exposed on port 4000 as default.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to test the application
 
-### `yarn eject`
+You can start the chat by providing a user name. On the left there is a list of all available channels. By clicking on a channel you can see the chat history of that channel. You can send messages to the channel, and later edit or delete your messages.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The user is persisted in the browser session storage, so if you open two different tabs you can use the app as two separate users.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+When two users are present in the same channel, they should be able to see the activities of the other immediately.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+On the top of the channel history, there is a search field that filters the channel messages based on the search term.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## How to build the project
 
-## Learn More
+The client was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can generate a static build by executing `yarn build`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can build the server similarly by running `yarn build` at the root of the `server` folder.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future developments
+
+The following features could be added to the project in the future:
+
+1. Adding authentication/authorization to the app
+2. Ability to create new rooms
+3. Adding a persistence layer (SQL or NoSQL)
+4. Ability to reply to a message
